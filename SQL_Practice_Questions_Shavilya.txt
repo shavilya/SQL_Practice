@@ -32,7 +32,7 @@ LEVEL 2: Intermediate SQL (Joins, GROUP BY, Subqueries)
 8. Average Order Quantity per Territory in 2016
    → Use sales-2016. Group by TerritoryKey and calculate average OrderQuantity.
 
-9. Product Categories with No Sales in 2017
+9. Product Categories with No Sales in 2016
    → Use LEFT JOIN between product-categories and sales-2017 and filter products never sold.
 
 10. Find Customers Who Made Purchases in All Three Years (2015–2017)
