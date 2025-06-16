@@ -1,0 +1,77 @@
+
+SQL PRACTICE QUESTIONS BASED ON YOUR DATA SCHEMA
+
+----------------------------------------
+LEVEL 1: Core SQL (Filtering, Aggregation, Joins)
+----------------------------------------
+1. Total Customers per Education Level
+   → Count how many customers belong to each EducationLevel.
+
+2. Top 5 Occupations by Customer Count
+   → Return the top 5 most common occupations from the Customers table.
+
+3. Find All Customers Who Are Homeowners and Have More Than 2 Children
+   → Use WHERE clause to filter based on HomeOwner and TotalChildren.
+
+4. List Customers Born After 1990
+   → Use BirthDate to filter the results.
+
+5. Find All Female Customers Who Are Not Married
+   → Use Gender and MaritialStatus.
+
+
+----------------------------------------
+LEVEL 2: Intermediate SQL (Joins, GROUP BY, Subqueries)
+----------------------------------------
+6. Top 5 Selling Products by Quantity
+   → Join sales-* and products. Group by ProductName, sum OrderQuantity, order by total sold.
+
+7. Get Return Rate per Product (Returned Qty / Sold Qty)
+   → Combine sales-* tables, join with returns, compute return rate per ProductKey.
+
+8. Average Order Quantity per Territory in 2016
+   → Use sales-2016. Group by TerritoryKey and calculate average OrderQuantity.
+
+9. Product Categories with No Sales in 2017
+   → Use LEFT JOIN between product-categories and sales-2017 and filter products never sold.
+
+10. Find Customers Who Made Purchases in All Three Years (2015–2017)
+    → Use INTERSECT or simulate with IN/subqueries to find such CustomerKeys.
+
+
+----------------------------------------
+LEVEL 3: Real-World Scenarios (Window Functions, Time Logic)
+----------------------------------------
+11. Find the First Purchase Date per Customer
+    → Use MIN(OrderDate) grouped by CustomerKey.
+
+12. Top 3 Products per Category by Revenue
+    → Join sales, products, subcategories, and categories. Use ROW_NUMBER() window function.
+
+13. Monthly Sales Trend per Product in 2017
+    → Extract month from OrderDate, group by Product and Month.
+
+14. Identify Customers Who Returned More Than 3 Products in 2016
+    → Join returns and sales-2016, group by CustomerKey, and apply HAVING condition.
+
+15. Average Sales Value per Customer Age Group
+    → Derive age from BirthDate, group into ranges, then compute average sales per group.
+
+
+----------------------------------------
+LEVEL 4: Advanced SQL (CTEs, Optimization, Analytics)
+----------------------------------------
+16. Rank Customers by Total Order Quantity in 2017 Within Each Territory
+    → Use RANK() or DENSE_RANK() over partitioned TerritoryKey.
+
+17. Find Products That Had a Price Increase Over Time
+    → Compare product prices across different years using sales-2015 to 2017.
+
+18. Detect Sales Gaps: Find Days With No Sales in 2017
+    → Generate a calendar using a CTE and anti-join with OrderDate.
+
+19. Identify Subcategories That Contribute >50% Revenue in Their Category
+    → Use revenue aggregations and compute percent contribution.
+
+20. Generate a Customer Purchase Summary Table
+    → Include: Name, Email, Total Orders, Total Spend, First & Last Order Date.
